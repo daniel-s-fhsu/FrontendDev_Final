@@ -1,8 +1,8 @@
-import events from "../data/data";
+import { GetAllEvents } from "../data/EventLoader";
 import EventCard from "../components/EventCard";
 
 function Home() {
-
+    const events = GetAllEvents();
 
     return (
         <div>

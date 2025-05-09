@@ -4,11 +4,13 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <div className="header">
-            <h1>Ticketing</h1>
-            <nav>
+        <div className="header bg-[#402d4a] border-2 border-[#ACC7B4] rounded-lg p-5 mb-5">
+            <span >
+            <h1 className="inline">Ticketing App</h1>
+            <nav className="inline pl-15">
                 <Link to="/">Home</Link>
             </nav>
+            </span>
         </div>
     );
 }
