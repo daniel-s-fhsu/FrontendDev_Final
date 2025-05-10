@@ -7,9 +7,11 @@ function Home() {
     return (
         <div>
             <h1>Home Page</h1>
-            {events.map(event => (
-                <EventCard event={event} />
-            ))}
+            <div className="flex flex-wrap">
+                {events.map(event => (
+                    <EventCard event={event} key={event.id}/>
+                ))}
+            </div>
         </div>
     );
 }

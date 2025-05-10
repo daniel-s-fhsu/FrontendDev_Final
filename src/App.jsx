@@ -7,7 +7,7 @@ import EventDetails from './pages/EventDetails';
 function App() {
 
   return (
-    <div>
+    <div className="m-5">
       <BrowserRouter>
       <Header />
         <main className="content">
