@@ -25,8 +25,10 @@ function Header() {
                 <BasicLink linkUrl="/">Home</BasicLink>
 
                 {user ? (
+                    <>
+                    <BasicLink linkUrl="/profile">Profile</BasicLink>
                     <BasicLink handleClick={handleLogout}>Logout</BasicLink>
-                    
+                    </>
                 ) : (
                     <BasicLink linkUrl="/signIn">Sign In</BasicLink>
                 )}

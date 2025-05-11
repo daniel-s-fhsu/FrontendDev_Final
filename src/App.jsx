@@ -7,11 +7,14 @@ import { AuthProvider } from './UserContext';
 import SignInForm from './pages/SignIn';
 import ProtectedRoute from './routes/ProtectedRoute';
 import Profile from './pages/Profile';
+import store from './store';
+import { Provider } from 'react-redux';
 
 function App() {
 
   return (
     <div className="m-5">
+      <Provider store={store}>
       <BrowserRouter>
       <AuthProvider>
       <Header />
@@ -25,6 +28,7 @@ function App() {
         </main>
       </AuthProvider>
       </BrowserRouter>
+      </Provider>
     </div>
   )
 }

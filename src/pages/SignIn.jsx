@@ -32,7 +32,7 @@ export default function SignInForm() {
         //const data = {name, email, password, confirmPassword };
 
         try {
-            await createUser(email, password).then((userCredential) => {
+            await createUser(email, password, name).then((userCredential) => {
                 // Sign in success
                 const user = userCredential.user;
                 console.log(user);
