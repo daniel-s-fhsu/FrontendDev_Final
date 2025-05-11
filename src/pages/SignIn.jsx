@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import FormHeader from "../components/form/FormHeader";
 import FormButton from "../components/form/FormButton";
 import FormInput from "../components/form/FormInput";
+import BasicLink from "../components/BasicComponents/BasicLink";
 import { UserAuth } from "../UserContext";
 
 
@@ -101,7 +102,7 @@ export default function SignInForm() {
                     <FormButton title="Register" />
                     <br />
                     <p>Already have an account?</p>
-                    <Link to="#" id="registerLink" onClick={onFormSwitch}>Back to Login</Link>
+                    <BasicLink linkUrl="#" id="registerLink" handleClick={onFormSwitch}>Back to Login</BasicLink>
                 </form>
                 </>);
         }
@@ -129,7 +130,7 @@ export default function SignInForm() {
                     <FormButton title="Log In" />
                     <br />
                     <p>Don't have an account?</p>
-                    <Link to="#" id="registerLink" onClick={onFormSwitch}>Register Here!</Link>
+                    <BasicLink linkUrl="#" id="registerLink" handleClick={onFormSwitch}>Register Here!</BasicLink>
                 </form>
             </div>
         );

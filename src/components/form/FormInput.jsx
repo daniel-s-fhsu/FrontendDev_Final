@@ -5,7 +5,7 @@ export default function FormInput(props) {
         <div className='row'>
             <label>{props.description}</label>
             <input type={props.type} placeholder={props.placeholder} id={props.id} value={props.value} onChange={props.onChange}
-                className={props.className}
+                className={props.className + " bg-white text-black rounded mx-5 my-1"}
             />
         </div>
     );
