@@ -27,6 +27,7 @@ function Header() {
                 {user ? (
                     <>
                     <BasicLink linkUrl="/profile">Profile</BasicLink>
+                    <BasicLink linkUrl="/cart">Cart</BasicLink>
                     <BasicLink handleClick={handleLogout}>Logout</BasicLink>
                     </>
                 ) : (

@@ -9,6 +9,7 @@ import ProtectedRoute from './routes/ProtectedRoute';
 import Profile from './pages/Profile';
 import store from './store';
 import { Provider } from 'react-redux';
+import Cart from './pages/Cart';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/event/:id" element={<EventDetails />} />
             <Route path="/signIn" element={<SignInForm />} />
             <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+            <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>}  />
           </Routes>
         </main>
       </AuthProvider>

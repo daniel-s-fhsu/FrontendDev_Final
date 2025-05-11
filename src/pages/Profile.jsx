@@ -1,4 +1,5 @@
 import FormHeader from "../components/form/FormHeader";
+import PurchaseHistory from "../components/PurchaseHistory";
 import { UserAuth } from "../UserContext";
 
 function Profile() {
@@ -10,6 +11,7 @@ function Profile() {
             <FormHeader>Profile</FormHeader>
             <p>Welcome, {user.displayName}!</p>
             <p>Email: {user.email}</p>
+            <PurchaseHistory />
         </div>
     );
 }

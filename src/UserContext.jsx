@@ -1,12 +1,16 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import { auth } from './Firebase';
+import { useDispatch } from 'react-redux';
+import { clearCart } from './data/cartSlice';
 
 const UserContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const dispatch = useDispatch();
 
     const createUser = async (email, password, displayName) => {
         try {
@@ -33,11 +37,13 @@ export const AuthProvider = ({ children }) => {
 
 
     const logout = () => {
+        dispatch(clearCart());
         return signOut(auth);
     };
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+
             setUser(currentUser);
             setLoading(false);
         });
