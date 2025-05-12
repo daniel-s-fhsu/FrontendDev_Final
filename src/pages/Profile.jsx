@@ -4,7 +4,6 @@ import { UserAuth } from "../UserContext";
 
 function Profile() {
     const {user} = UserAuth();
-    console.log(user);
 
     return (
         <div>

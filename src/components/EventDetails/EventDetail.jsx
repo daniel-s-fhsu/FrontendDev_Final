@@ -7,7 +7,7 @@ function EventDetail({event}) {
     const dispatch = useDispatch();
 
     const handleAdd = () => {
-        dispatch(addEventToCart({name: event.title, date: event.date}));
+        dispatch(addEventToCart({name: event.title, date: event.date, price: event.price}));
         alert("Cart updated");
     }
 

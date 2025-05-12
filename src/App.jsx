@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import store from './store';
 import { Provider } from 'react-redux';
 import Cart from './pages/Cart';
+import Success from './pages/Success';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/signIn" element={<SignInForm />} />
             <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
             <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>}  />
+            <Route path="/success" element={<Success />} />
           </Routes>
         </main>
       </AuthProvider>

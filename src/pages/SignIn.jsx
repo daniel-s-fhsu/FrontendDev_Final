@@ -38,8 +38,8 @@ export default function SignInForm() {
                 console.log(user);
                 //navigate("/");
             });
-            
-        } catch(err) {
+
+        } catch (err) {
             console.log(err);
         }
 
@@ -49,12 +49,12 @@ export default function SignInForm() {
         setConfirmPassword("");
     };
 
-    const handleSignIn = async(e) => {
+    const handleSignIn = async (e) => {
         e.preventDefault();
         try {
             await login(email, password).then((userCredential) => {
                 const user = userCredential.user;
-                
+
             });
             navigate("/");
         } catch (err) {
@@ -64,78 +64,92 @@ export default function SignInForm() {
 
     const renderForm = () => {
         if (showRegisterForm) {
-            return(<>
-                    <FormHeader title="Register" />
-                    <form onSubmit={handleOnSubmit}>
-                    <FormInput 
+            return (<>
+                <FormHeader title="Register" />
+                <form className="my-5" onSubmit={handleOnSubmit}>
+                    <FormInput
                         description="Name"
-                        type="text" 
-                        className="nameInput"  
-                        placeholder="Enter your full name" 
-                        id="name" value={name} 
+                        type="text"
+                        className="nameInput"
+                        placeholder="Enter your full name"
+                        id="name" value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
-                    <FormInput 
+                    <FormInput
                         description="Email"
-                        type="email" 
-                        className="email-input"  
-                        placeholder="Enter your email" 
-                        id="email" value={email} 
+                        type="email"
+                        className="email-input"
+                        placeholder="Enter your email"
+                        id="email" value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <FormInput 
+                    <FormInput
                         description="Password"
-                        type="password" 
-                        className="password-input"  
-                        placeholder="Enter your password" 
-                        id="password" value={password} 
+                        type="password"
+                        className="password-input"
+                        placeholder="Enter your password"
+                        id="password" value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <FormInput 
+                    <FormInput
                         description="Confirm Password"
-                        type="password" 
-                        className="password-input"  
-                        placeholder="Confirm your password" 
-                        id="cpassword" value={confirmPassword} 
+                        type="password"
+                        className="password-input"
+                        placeholder="Confirm your password"
+                        id="cpassword" value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                     <FormButton title="Register" />
-                    <br />
-                    <p>Already have an account?</p>
-                    <BasicLink linkUrl="#" id="registerLink" handleClick={onFormSwitch}>Back to Login</BasicLink>
+                    <div className="text-center">
+                        <p className="text-sm">Already have an account?</p>
+                        <BasicLink linkUrl="#" id="registerLink" handleClick={onFormSwitch}>
+                            Back to Login
+                        </BasicLink>
+                    </div>
+
                 </form>
-                </>);
+            </>);
         }
 
         return (
             <div>
                 <FormHeader title="Login" />
-                <form onSubmit={handleSignIn}>
-                    <FormInput 
+                <form className="my-5" onSubmit={handleSignIn}>
+                    <FormInput
                         description="Email"
-                        type="email" 
-                        className="email-input"  
-                        placeholder="Enter your email" 
-                        id="email" value={email} 
+                        type="email"
+                        className="email-input"
+                        placeholder="Enter your email"
+                        id="email" value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <FormInput 
+                    <FormInput
                         description="Password"
-                        type="password" 
-                        className="password-input"  
-                        placeholder="Enter your password" 
-                        id="password" value={password} 
+                        type="password"
+                        className="password-input"
+                        placeholder="Enter your password"
+                        id="password" value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <FormButton title="Log In" />
-                    <br />
-                    <p>Don't have an account?</p>
-                    <BasicLink linkUrl="#" id="registerLink" handleClick={onFormSwitch}>Register Here!</BasicLink>
+                    <div className="text-center">
+                        <p className="text-sm">Don't have an account?</p>
+                        <BasicLink linkUrl="#" id="registerLink" handleClick={onFormSwitch}>
+                            Register Here!
+                        </BasicLink>
+                    </div>
+
                 </form>
             </div>
         );
     };
 
-    return <div className="loginForm">{renderForm()}</div>
-    
+    return (
+        <div className="flex justify-center items-start pt-24 px-4">
+          <div className="w-full max-w-sm p-6 border border-gray-200 rounded shadow-sm bg-[#402d4a]">
+            {renderForm()}
+          </div>
+        </div>
+      );
+
 };
