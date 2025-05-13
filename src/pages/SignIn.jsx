@@ -35,10 +35,9 @@ export default function SignInForm() {
             await createUser(email, password, name).then((userCredential) => {
                 // Sign in success
                 const user = userCredential.user;
-                console.log(user);
-                //navigate("/");
+                
             });
-
+            navigate("/");
         } catch (err) {
             console.log(err);
         }
